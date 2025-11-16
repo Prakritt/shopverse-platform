@@ -1,0 +1,18 @@
+server:
+  port: 8080 # API GATEWAY runs on this port
+
+spring:
+  application:
+    name: api-gateway # Gives this name in the EUREKA
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #Automatically use Eureka to discover services
+          #Maps routes automatically with this pattern http://<gateway host>:8080/<SERVICE-NAME>/<endpoint>
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+      #This tell the API Gateway where the Eureka server is (Self registration with Eureka) and use Eureka to discover other services
