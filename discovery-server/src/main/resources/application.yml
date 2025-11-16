@@ -1,0 +1,14 @@
+server:
+  port: 8761 #Starts the application on this port. This is the standard Eureka Server Port
+
+spring:
+  application:
+    name: discovery-server # This gives this server a logical name that appears in Eureka Server
+
+eureka:
+  client:
+    register-with-eureka: false #Pervents self registration as a client because it is server
+    fetch-registry: false # This is the registry itself. SO prevents the fetching from other registry
+  server:
+    enable-self-preservation: false # Disables self preservation in local but in enterprse need to enable it
+
